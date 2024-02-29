@@ -1,0 +1,69 @@
+APIs lab practice
+
+Part 1: SWAPI
+
+1 the height of Darth Vader
+   - 202
+
+2 the population of the planet Alderaan
+- 200000
+
+3 the name of the manufacturer of the Millennium Falcon
+- Corellian Engineering Corporation
+
+4 the name of the species that C-3PO belongs to (multiple URLs)
+- Droid
+
+5 the title of each film that Obi-Wan Kenobi is in (multiple URLs)
+   - A New Hope
+   - The Empire Strikes Back
+   - Return of the Jedi
+   - The Phantom Menace
+   - Attack of the Clones
+
+
+Part 2: Social Mountain
+
+1 Check if the POST request accept params, queries, and/or a body. Which one(s) and what information is it expecting to be sent?
+
+- The POST request for creating a new post typically accepts a body. The body should contain the information of the post being created, such as the text of the post, author information
+
+2 What data type does the GET request return?
+  - The GET request typically returns data in JSON format.
+
+3 What would the URL look like for deleting the post with the id 555? (This post does not exist anymore, but the syntax is the same for existing posts, )
+  - https://practiceapi.devmountain.com/api/posts/555
+
+4 List the possible response codes from the GET request at ‘/posts/filter’
+   - 200 (OK), 400 (Bad Request), 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), etc
+
+5 Create a post whose text is your name, record the URL and body here:
+  
+  - URL: https://practiceapi.devmountain.com/api/posts
+  body: { "text": "Zentalm Genet" }
+
+
+6 What would the URL and body object be to update the post you just made to contain your faovrite color instead of your name?
+
+  - URL: Assuming the ID of the post you created is 123, the URL   would be: https://practiceapi.devmountain.com/api/posts/123
+Body:
+
+{
+  "text": "Blue"
+}
+
+
+7 What is the URL to get posts that contain the text “blue”?
+  - URL: https://practiceapi.devmountain.com/api/posts/filter?text=blue
+
+8 Make a request to GET all the posts. What are the content type and charset of the response? (Hint: look on the Headers)
+
+       -  Content-Type: application/json
+       -  Charset: Typically UTF-8
+
+9 What would cause a PUT request to return a 409 status?
+
+    - A PUT request might return a 409 status if there is a     conflict with the current state of the resource being updated. This could happen if there are conflicting changes made to the resource by multiple clients.
+
+10 What happens if you try to send a query in the GET request URL? Why do you get that response?
+    - In a GET request, queries are not typically used in the URL. Instead, queries are usually sent in the request parameters or body. If you try to send a query in the GET request URL, you might receive a 400 Bad Request response because the server is expecting parameters to be sent in a different format.
