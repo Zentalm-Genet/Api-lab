@@ -1,4 +1,5 @@
 const getBtn = document.querySelector('#btn');
+const section = document.querySelector('#section')
 
 // const btnFunction = () => console.log("button clicked");
 
@@ -14,9 +15,9 @@ function getAlderaanResidents() {
                 axios.get(residentUrl)
                     .then(residentResponse => {
                         const residentName = residentResponse.data.name;
-                        const residentHeader = document.createElement('h2');
+                        const residentHeader = document.createElement('h3');
                         residentHeader.textContent = residentName;
-                        document.body.appendChild(residentHeader);
+                        section.appendChild(residentHeader);
                     })
                     .catch(error => {
                         console.error('Error fetching resident:', error);
